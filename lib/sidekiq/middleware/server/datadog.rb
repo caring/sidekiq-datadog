@@ -80,6 +80,10 @@ module Sidekiq
             if queued_ms
               @statsd.timing "#{@metric_name}.queued_time", queued_ms, :tags => tags
             end
+
+            @statsd.gauge "#{@metric_name}.retry_size", Sidekiq::Stats.new.retry_size, tags: tags
+            @statsd.gauge "#{@metric_name}.enqueued", Sidekiq::Stats.new.enqueued, tags: tags
+            @statsd.gauge "#{@metric_name}.failed", Sidekiq::Stats.new.failed, tags: tags
           end
 
           def underscore(word)

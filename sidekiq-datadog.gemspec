@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'sidekiq/datadog/version'
 
 Gem::Specification.new do |s|
-  s.name          = "sidekiq-datadog"
+  s.name          = "sidekiq-datadog-caring"
   s.version       = Sidekiq::Datadog::VERSION.dup
   s.authors       = ["Dimitrij Denissenko"]
   s.email         = ["dimitrij@blacksquaremedia.com"]
